@@ -1,0 +1,42 @@
+server:
+  ip: ${SERVER_PUBLIC_BASE_URL:http://localhost:7245}
+  tomcat:
+    relaxed-query-chars: '|,{,},[,]'
+  port: ${SERVER_PORT:7245}
+
+spring:
+  config:
+    import:
+      - optional:file:./application-local.yml
+      - optional:file:./config/application-local.yml
+  mail:
+    host: ${MAIL_HOST:smtp.qq.com}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  servlet:
+    multipart:
+      max-request-size: 10000MB
+      max-file-size: 10024MB
+  datasource:
+    username: ${DB_USERNAME:}
+    password: ${DB_PASSWORD:}
+    url: ${DB_URL:}
+  jackson:
+    property-naming-strategy: UPPER_CAMEL_CASE
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+mybatis-plus:
+  mapper-locations: mapper/*.xml
+  global-config:
+    db-config:
+      table-prefix:
+  configuration:
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+    map-underscore-to-camel-case: false
+  type-aliases-package: com.example.web.entity

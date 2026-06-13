@@ -1,0 +1,25 @@
+.DS_Store
+
+# Frontend
+SysHotelAppoint.elementui/node_modules/
+SysHotelAppoint.elementui/dist/
+SysHotelAppoint.elementui/npm-debug.log*
+SysHotelAppoint.elementui/yarn-debug.log*
+SysHotelAppoint.elementui/yarn-error.log*
+
+# Backend
+SysHotelAppoint.springboot/target/
+SysHotelAppoint.springboot/application-local.yml
+SysHotelAppoint.springboot/external-resources/
+
+# IDE
+.idea/
+.vscode/
+**/.idea/
+**/.vscode/
+
+# OS / editor
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
